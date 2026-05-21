@@ -8,14 +8,11 @@ public enum PlayerStateType
 
 public class PlayerState : MonoBehaviour
 {
-    public PlayerStateType CurrentState { 
-        get; 
-        private set; } = PlayerStateType.Ghost;
+    public PlayerStateType CurrentState { get; private set; } = PlayerStateType.Ghost;
 
-    [Header("Sprites")]
+    [Header("Sprite")]
     [SerializeField] private SpriteRenderer playerSpriteRenderer;
     [SerializeField] private Sprite ghostSprite;
-    [SerializeField] private Sprite possessedSprite;
 
     public bool IsGhost => CurrentState == PlayerStateType.Ghost;
     public bool IsPossessed => CurrentState == PlayerStateType.Possessed;
@@ -38,7 +35,7 @@ public class PlayerState : MonoBehaviour
         Debug.Log("[PlayerState] 유령 상태");
     }
 
-    public void SetPossessed()
+    public void SetPossessed(Sprite possessedSprite)
     {
         CurrentState = PlayerStateType.Possessed;
 

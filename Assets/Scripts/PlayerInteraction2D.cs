@@ -102,4 +102,15 @@ public class PlayerInteraction2D : MonoBehaviour
 
         promptUI.Show(prompt);
     }
+
+    // 빙의 성공 후 시녀가 Destroy되면, 현재 상호작용 대상도 비워줘야 함
+    public void ClearCurrentInteractable()
+{
+    currentInteractable = null;
+
+    if (promptUI != null)
+        promptUI.Hide();
+
+    Debug.Log("[PlayerInteraction2D] 현재 상호작용 대상 초기화");
+}
 }
