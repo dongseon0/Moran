@@ -4,7 +4,7 @@ public class TestInteractable : MonoBehaviour, IInteractable
 {
     public string GetPromptText(PlayerState playerState)
     {
-        return "E: 테스트 상호작용";
+        return "Hold E to interact";
     }
 
     public bool CanInteract(PlayerState playerState)
