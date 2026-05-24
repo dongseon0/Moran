@@ -17,15 +17,15 @@ public class MaidPossessable : MonoBehaviour, IInteractable
     public string GetPromptText(PlayerState playerState)
     {
         if (isPossessed)
-            return "Already possessed.";
+            return "이미 빙의되어 있습니다..";
 
         if (playerState.IsPossessed)
-            return "Already possessing another body.";
+            return "이미 다른 몸을 빙의하고 있습니다.";
 
         if (isCooldown)
-            return "The maid's spirit is shaking. Try again later.";
+            return "그녀의 영혼이 불안정합니다. 나중에 다시 시도하세요.";
 
-        return "E: Attempt to possess the maid";
+        return "[E] 시녀에게 빙의하기";
     }
 
     public bool CanInteract(PlayerState playerState)

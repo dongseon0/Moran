@@ -7,9 +7,9 @@ public class PossessedOnlyInteractable : MonoBehaviour, IInteractable
     public string GetPromptText(PlayerState playerState)
     {
         if (playerState.IsGhost)
-            return "Only human can interact with this.";
+            return "유령은 물건을 만질 수 없습니다.";
 
-        return "E: Interact (Possessed Only)";
+        return "[E] 연서 열기";
     }
 
     public bool CanInteract(PlayerState playerState)
