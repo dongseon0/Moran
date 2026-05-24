@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 24256421}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow2D
   target: {fileID: 943513673}
-  offset: {x: 0, y: 0, z: -10}
+  backgroundRenderer: {fileID: 641301192}
+  followSpeed: 10
 --- !u!114 &24256422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,7 +972,7 @@ GameObject:
   - component: {fileID: 641301193}
   - component: {fileID: 641301192}
   m_Layer: 0
-  m_Name: image_0
+  m_Name: BackgroundImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1882,6 +1883,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -4651770460307127077, guid: e92be1989979d4daf8a789c25c043587, type: 3}
+    - target: {fileID: 3923001904118752115, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4781670323843839458, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
