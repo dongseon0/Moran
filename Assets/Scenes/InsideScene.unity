@@ -256,8 +256,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_AnchoredPosition: {x: 10, y: 0.0000076294}
+  m_SizeDelta: {x: 80.4535, y: -46.0597}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &69870487
 MonoBehaviour:
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 4448715427215634006, guid: bfb0e83c2c1af41feb6f50a1005f1e96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -545,6 +545,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!4 &286008859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4781670323843839458, guid: 2ea89a315315545a18147b134b93ab63, type: 3}
+  m_PrefabInstance: {fileID: 1941203103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &316929365
 GameObject:
   m_ObjectHideFlags: 0
@@ -594,8 +599,8 @@ MonoBehaviour:
   gaugeSlider: {fileID: 2075289498}
   timerText: {fileID: 786224457}
   countText: {fileID: 1509859923}
-  requiredTapCount: 20
-  timeLimit: 10
+  requiredTapCount: 10
+  timeLimit: 3
 --- !u!1 &433734162
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,10 +658,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tap 20 times in 10 seconds
+  m_text: "\uC2A4\uD398\uC774\uC2A4\uBC14\uB97C \uBE60\uB974\uAC8C \uC5F0\uD0C0\uD558\uC5EC
+    \uC601\uD63C\uC744 \uCC28\uC9C0\uD558\uC138\uC694!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
+  m_sharedMaterial: {fileID: 8305737541124866996, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -719,7 +725,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -470.6068, y: 0, z: -664.6714, w: 0}
+  m_margin: {x: -796.38873, y: 0, z: -664.6714, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -858,7 +864,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: 0}
+  m_AnchoredPosition: {x: 283, y: 44}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &471480311
@@ -883,15 +889,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Push E to interact
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
+  m_sharedMaterial: {fileID: 8305737541124866996, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -908,8 +914,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -947,7 +953,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -220.41101, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1225,8 +1231,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -41.5, y: 0}
+  m_SizeDelta: {x: -83, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &739849361
 MonoBehaviour:
@@ -1241,7 +1247,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1280,6 +1286,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractionPromptUI
   panel: {fileID: 739849359}
   promptText: {fileID: 471480311}
+  target: {fileID: 286008859}
+  worldCamera: {fileID: 169243911}
+  worldOffset: {x: -1, y: -1, z: 0}
+  screenOffset: {x: 0, y: 20}
 --- !u!1 &786224454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,15 +1357,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
+  m_sharedMaterial: {fileID: 8305737541124866996, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4294901762
+  m_fontColor: {r: 0.0076869726, g: 0, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1641,15 +1651,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
+  m_sharedMaterial: {fileID: 8305737541124866996, guid: 4c13e92867d36455b9fcee2a9e674d44, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1943,7 +1953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.735849, g: 0.3922214, b: 0.3922214, a: 0.7294118}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2286,7 +2296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SceneDoorInteractable
   targetSceneName: OutsideScene
   targetSpawnId: OutsideReturn
-  promptText: "E: \uC774\uB3D9\uD558\uAE30"
+  promptText: "[E] \uBC16\uC73C\uB85C \uB098\uAC00\uAE30"
 --- !u!1 &2066314074
 GameObject:
   m_ObjectHideFlags: 0
