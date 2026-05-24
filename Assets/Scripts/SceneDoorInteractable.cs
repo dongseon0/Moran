@@ -6,6 +6,9 @@ public class SceneDoorInteractable : MonoBehaviour, IInteractable
     [Header("Scene")]
     [SerializeField] private string targetSceneName;
 
+    [Header("Spawn")]
+    [SerializeField] private string targetSpawnId;
+
     [Header("Prompt")]
     [SerializeField] private string promptText = "E: 이동하기";
 
@@ -31,9 +34,12 @@ public class SceneDoorInteractable : MonoBehaviour, IInteractable
             return;
         }
 
+        SceneTransitionData.NextSpawnId = targetSpawnId;
+
         isLoading = true;
 
-        Debug.Log("[SceneDoorInteractable] 씬 이동: " + targetSceneName);
+        Debug.Log($"[SceneDoorInteractable] 씬 이동: {targetSceneName}, SpawnId: {targetSpawnId}");
+
         SceneManager.LoadScene(targetSceneName);
     }
 }
