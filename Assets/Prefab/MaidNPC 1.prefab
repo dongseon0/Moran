@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5375839113332129238}
   - component: {fileID: 2598687319825853370}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 1705446383
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5115029980561748842, guid: e92be1989979d4daf8a789c25c043587, type: 3}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 1198843229090578066}
   - component: {fileID: 6457616382829701001}
   - component: {fileID: 7766618042533922288}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: MaidNPC 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
