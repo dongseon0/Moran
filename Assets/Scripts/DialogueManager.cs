@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro; // TextMeshPro를 쓰기 위해 꼭 필요한 네임스페이스입니다.
+using UnityEngine.Events; // ⭐ [추가] 유니티 이벤트를 쓰기 위해 반드시 필요합니다!
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("UI 연결")]
-    public GameObject dialoguePanel;     // ⭐ [추가] 배경이 될 검은색 대사 박스(Panel)
+    public GameObject dialoguePanel;     // 배경이 될 검은색 대사 박스(Panel)
     public TextMeshProUGUI dialogueText; // 화면에 표시될 텍스트 컴포넌트
 
     [Header("대사 내용 입력")]
     [TextArea(3, 5)] // 인스펙터 창에서 줄바꿈을 편하게 할 수 있게 해줍니다.
     public string[] sentences; // 대사들을 순서대로 담을 배열
+
+    [Header("이벤트 설정")]
+    // ⭐ [추가] 대사가 모두 끝났을 때 실행될 이벤트입니다. 인스펙터 창에 버튼 형태의 칸이 생깁니다.
+    public UnityEvent onDialogueComplete; 
 
     private int currentIndex = 0; // 현재 몇 번째 대사를 보고 있는지 기억하는 변수
 
@@ -71,16 +76,21 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = ""; // 텍스트 창을 비웁니다.
         
-        // 유니티 콘솔창에 메시지를 띄웁니다. (테스트용)
-        Debug.Log("주인공의 독백이 끝났습니다! 이제 유서를 클릭할 수 있습니다."); 
+        Debug.Log("주인공의 독백이 끝났습니다! 이제 유서를 클릭하거나 다음 씬으로 넘어갑니다."); 
         
-        // ⭐ [수정] 글자뿐만 아니라 검은색 대사 박스(Panel)를 통째로 화면에서 사라지게 만듭니다.
+        // 글자뿐만 아니라 검은색 대사 박스(Panel)를 통째로 화면에서 사라지게 만듭니다.
         if (dialoguePanel != null)
         {
             dialoguePanel.SetActive(false); 
         }
 
-        // 매니저 오브젝트 자체를 끌 필요가 있다면 그대로 유지합니다.
+        // ⭐ [추가] 대사가 끝났음을 알리고 등록된 이벤트(씬 전환 등)를 실행합니다!
+        if (onDialogueComplete != null)
+        {
+            onDialogueComplete.Invoke();
+        }
+
+        // 매니저 오브젝트를 끕니다. (이벤트를 먼저 실행한 뒤 안전하게 꺼지도록 순서를 변경했습니다.)
         gameObject.SetActive(false); 
     }
 }
