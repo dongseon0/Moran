@@ -5,6 +5,6 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadGameScene()
     {
-        SceneManager.LoadScene("Yoonchae Testscene");
+        SceneManager.LoadScene("TestScene");
     }
 }
