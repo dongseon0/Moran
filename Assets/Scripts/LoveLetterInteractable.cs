@@ -4,6 +4,13 @@ using TMPro;
 
 public class LoveLetterInteractable : MonoBehaviour
 {
+    //BGM용 창 생성
+    [Header("BGM")]
+    public AudioSource bgmSource;      
+    public AudioClip letterBGM;
+    public AudioClip afterLetterBGM;
+    //여기까지
+
     [Header("UI 안내창 연결")]
     public GameObject ghostWarningUI;   // "유령은 물건을 만질 수 없습니다" UI
     public GameObject promptEWithText;  // "[E] 연서 열기" UI
@@ -76,6 +83,16 @@ public class LoveLetterInteractable : MonoBehaviour
         isNarrationActive = true;
         currentIndex = 0;
 
+        //연서 BGM 재생용 창
+        if (bgmSource != null && letterBGM != null)
+        {
+            bgmSource.Stop();
+            bgmSource.clip = letterBGM;
+            bgmSource.loop = true;
+            bgmSource.Play();
+        }
+        //여기까지
+
         if (narrationPanel != null) narrationPanel.SetActive(true); 
         ShowSentence(); 
     }
@@ -104,7 +121,17 @@ public class LoveLetterInteractable : MonoBehaviour
         isNarrationActive = false;
         narrationText.text = "";
 
-        if (narrationPanel != null) narrationPanel.SetActive(false); 
+        if (narrationPanel != null) narrationPanel.SetActive(false);
+
+        // 엔딩 BGM 재생용 창
+        if (bgmSource != null && afterLetterBGM != null)
+        {
+            bgmSource.Stop();
+            bgmSource.clip = afterLetterBGM;
+            bgmSource.loop = true;
+            bgmSource.Play();
+        }
+        //여기까지
 
         // 🔴 대사가 끝났으므로 엔딩 이미지를 켜줍니다!
         if (endingImageUI != null) 
