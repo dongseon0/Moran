@@ -1196,6 +1196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4264dda553731e949acb5b736f3db9f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LoveLetterInteractable
+  bgmSource: {fileID: 0}
+  letterBGM: {fileID: 0}
+  afterLetterBGM: {fileID: 0}
   ghostWarningUI: {fileID: 0}
   promptEWithText: {fileID: 0}
   narrationPanel: {fileID: 1935115962}
@@ -1314,6 +1317,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 638482094}
   m_CullTransparentMesh: 1
+--- !u!1 &720343576
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 720343578}
+  - component: {fileID: 720343577}
+  m_Layer: 0
+  m_Name: Spawn_InsideStart2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &720343577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720343576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03f2bec7eea1470588cc095c77860ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneSpawnPoint
+  spawnId: InsideStartRight
+--- !u!4 &720343578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720343576}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.08, y: 2.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &739849359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6321,5 +6369,6 @@ SceneRoots:
   - {fileID: 2043071387}
   - {fileID: 1058779719}
   - {fileID: 1737389564}
+  - {fileID: 720343578}
   - {fileID: 1500323109}
   - {fileID: 1578972921}
