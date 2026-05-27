@@ -24,7 +24,6 @@ public class LoveLetterInteractable : MonoBehaviour
     //효과음 창 생성
     [Header("Space SFX")]
     public AudioClip letterPageSound;
-    public AudioClip narrationNextSound;
     public int letterSoundCount = 5;
     //여기까지
 
@@ -42,7 +41,19 @@ public class LoveLetterInteractable : MonoBehaviour
 
     [Header("나레이션 대사 입력")]
     [TextArea(3, 5)]
-    public string[] sentences;            
+    public string[] sentences;
+
+    //엔딩 나레이션용 코드
+    [Header("엔딩 나레이션")]
+    public GameObject endingNarrationPanel;
+    public TextMeshProUGUI endingNarrationText;
+
+    [TextArea(3, 5)]
+    public string[] endingSentences;
+
+    private int endingIndex = 0;
+    private bool isEndingNarrationActive = false;
+    //여기까지
 
     [Header("종료 후 실행할 이벤트")]
     public UnityEvent onNarrationEnd;     
@@ -62,6 +73,17 @@ public class LoveLetterInteractable : MonoBehaviour
 
     void Update()
     {
+        //엔딩 나레이션용 코드
+        if (isEndingNarrationActive)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                NextEndingSentence();
+            }
+            return;
+        }
+        //여기까지
+
         if (isNarrationActive)
         {
             if (Input.GetKeyDown(KeyCode.Space))
@@ -161,11 +183,6 @@ public class LoveLetterInteractable : MonoBehaviour
             targetClip = letterPageSound;
         }
 
-        else if (currentIndex >= 5)
-        {
-            targetClip = narrationNextSound;
-        }
-
         if (targetClip != null)
         {
             sfxSource.PlayOneShot(targetClip);
@@ -196,11 +213,56 @@ public class LoveLetterInteractable : MonoBehaviour
             endingImageUI.SetActive(true); 
         }
 
+        //엔딩 나레이션용 코드
+        StartEndingNarration();
+        //여기까지
+
         if (onNarrationEnd != null)
         {
             onNarrationEnd.Invoke();
         }
     }
+
+    //엔딩 나레이션용 코드
+    void StartEndingNarration()
+    {
+        if (endingSentences == null || endingSentences.Length == 0) return;
+
+        isEndingNarrationActive = true;
+        endingIndex = 0;
+
+        if (endingNarrationPanel != null)
+            endingNarrationPanel.SetActive(true);
+
+        ShowEndingSentence();
+    }
+
+    void ShowEndingSentence()
+    {
+        if (endingNarrationText != null)
+            endingNarrationText.text = endingSentences[endingIndex];
+    }
+
+    void NextEndingSentence()
+    {
+        endingIndex++;
+
+        if (endingIndex >= endingSentences.Length)
+        {
+            isEndingNarrationActive = false;
+
+            if (endingNarrationText != null)
+                endingNarrationText.text = "";
+
+            if (endingNarrationPanel != null)
+                endingNarrationPanel.SetActive(false);
+
+            return;
+        }
+
+        ShowEndingSentence();
+    }
+    //여기까지
 
     //상호작용 소리용 코드
     void PlayPaperSound()
