@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using TMPro;
 
+//추가
+using UnityEngine.SceneManagement;
+//여기까지
+
 public class LoveLetterInteractable : MonoBehaviour
 {
     //BGM용 창 생성
