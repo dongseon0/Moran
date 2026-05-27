@@ -1,16 +1,25 @@
 using UnityEngine;
 
-public class PlayerCarryData : MonoBehaviour
+public static class PlayerCarryData
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public static PlayerStateType CurrentState = PlayerStateType.Ghost;
+    public static Sprite PossessedSprite;
+
+    public static void SaveGhost()
     {
-        
+        CurrentState = PlayerStateType.Ghost;
+        PossessedSprite = null;
     }
 
-    // Update is called once per frame
-    void Update()
+    public static void SavePossessed(Sprite sprite)
     {
-        
+        CurrentState = PlayerStateType.Possessed;
+        PossessedSprite = sprite;
+    }
+
+    public static void Reset()
+    {
+        CurrentState = PlayerStateType.Ghost;
+        PossessedSprite = null;
     }
 }
