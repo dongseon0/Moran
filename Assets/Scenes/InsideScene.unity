@@ -1548,7 +1548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LoveLetterInteractable
   bgmSource: {fileID: 157678658}
   letterBGM: {fileID: 8300000, guid: 26d45ad35ea90f64ba9c5e2343a17ae7, type: 3}
-  afterLetterBGM: {fileID: 8300000, guid: 26d45ad35ea90f64ba9c5e2343a17ae7, type: 3}
+  afterLetterBGM: {fileID: 8300000, guid: c3d983564e8ebad4b804b5621a328d3f, type: 3}
   sfxSource: {fileID: 536093037}
   paperSound: {fileID: 8300000, guid: e7f2eaaab2768ee45a55e8750d1bea12, type: 3}
   letterPageSound: {fileID: 8300000, guid: 4382c0119e82b5f49affd2a62d430943, type: 3}
