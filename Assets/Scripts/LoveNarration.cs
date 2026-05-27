@@ -1,3 +1,4 @@
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
@@ -14,6 +15,9 @@ public class LoveNarrationManager : MonoBehaviour
 
     [Header("종료 후 실행할 이벤트 (씬 전환 등)")]
     public UnityEvent onNarrationEnd;     // 대사가 끝나면 실행할 이벤트
+
+    [Header("엔딩 씬")]
+    public string endingSceneName = "EndingScene";
 
     private int currentIndex = 0;
     private bool isNarrationActive = false;
@@ -69,18 +73,24 @@ public class LoveNarrationManager : MonoBehaviour
     void EndNarration()
     {
         isNarrationActive = false;
-        narrationText.text = "";
 
-        // UI 끄기
-        if (narrationPanel != null) narrationPanel.SetActive(false);
+        if (narrationText != null)
+            narrationText.text = "";
 
-        // 대사가 끝났으니 등록된 이벤트(씬 전환 등)를 터트립니다!
+        if (narrationPanel != null)
+            narrationPanel.SetActive(false);
+
         if (onNarrationEnd != null)
-        {
             onNarrationEnd.Invoke();
+
+        if (string.IsNullOrEmpty(endingSceneName))
+        {
+            Debug.LogError("[LoveNarrationManager] Ending Scene Name이 비어 있습니다.");
+            return;
         }
 
-        // 스크립트가 붙은 오브젝트도 안전하게 꺼줍니다.
-        gameObject.SetActive(false);
+        Debug.Log("[LoveNarrationManager] 엔딩 씬으로 이동: " + endingSceneName);
+
+        SceneManager.LoadScene(endingSceneName);
     }
 }
