@@ -18,6 +18,6 @@ public class SceneLoader : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
 
-        SceneManager.LoadScene("Yoonchae Testscene");
+        SceneManager.LoadScene("NarrationScene");
     }
 }
