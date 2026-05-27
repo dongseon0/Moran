@@ -17,6 +17,13 @@ public class LoveLetterInteractable : MonoBehaviour
     public AudioClip paperSound;
     //여기까지
 
+    //효과음 창 생성
+    [Header("Space SFX")]
+    public AudioClip letterPageSound;
+    public AudioClip narrationNextSound;
+    public int letterSoundCount = 5;
+    //여기까지
+
     [Header("UI 안내창 연결")]
     public GameObject ghostWarningUI;   // "유령은 물건을 만질 수 없습니다" UI
     public GameObject promptEWithText;  // "[E] 연서 열기" UI
@@ -118,6 +125,10 @@ public class LoveLetterInteractable : MonoBehaviour
 
     void NextSentence()
     {
+        //효과음 생성용 코드
+        PlaySpaceNextSound();
+        //여기까지
+
         currentIndex++;
 
         if (currentIndex >= sentences.Length)
@@ -129,6 +140,34 @@ public class LoveLetterInteractable : MonoBehaviour
             ShowSentence();
         }
     }
+
+    //효과음 생성용 코드
+    void PlaySpaceNextSound()
+    {
+        if (sfxSource == null)
+            sfxSource = GetComponent<AudioSource>();
+
+        if (sfxSource == null)
+            sfxSource = gameObject.AddComponent<AudioSource>();
+
+        AudioClip targetClip = null;
+
+        if (currentIndex == 4)
+        {
+            targetClip = letterPageSound;
+        }
+
+        else if (currentIndex >= 5)
+        {
+            targetClip = narrationNextSound;
+        }
+
+        if (targetClip != null)
+        {
+            sfxSource.PlayOneShot(targetClip);
+        }
+    }
+    //여기까지
 
     void EndNarration()
     {

@@ -16,6 +16,22 @@ public class PossessionMinigame : MonoBehaviour
     [SerializeField] private int requiredTapCount = 15;
     [SerializeField] private float timeLimit = 3f;
 
+    //BGM, 효과음용 코드
+    [Header("Audio Source")]
+    [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource bgmSource;
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip bellSound;
+    [SerializeField] private AudioClip mashSound;
+
+    [Header("BGM")]
+    [SerializeField] private AudioClip minigameBGM;
+
+    [Header("Audio Timing")]
+    [SerializeField] private float startDelayAfterBell = 0.8f;
+    //여기까지
+
     private int currentTapCount;
     private float remainTime;
     private bool isPlaying;
@@ -26,6 +42,18 @@ public class PossessionMinigame : MonoBehaviour
     private void Awake()
     {
         ClosePanelOnly();
+
+        //BGM용 코드
+        if (sfxSource == null)
+            sfxSource = gameObject.AddComponent<AudioSource>();
+
+        if (bgmSource == null)
+            bgmSource = gameObject.AddComponent<AudioSource>();
+
+        sfxSource.playOnAwake = false;
+        bgmSource.playOnAwake = false;
+        bgmSource.loop = true;
+        //여기까지
     }
 
     private void Update()
@@ -48,12 +76,25 @@ public class PossessionMinigame : MonoBehaviour
         onSuccess = successCallback;
         onFail = failCallback;
 
+        //효과음용 코드
+        PlayBellSound();
+
+        Invoke(nameof(ActuallyStartMinigame), startDelayAfterBell);
+        //여기까지
+    }
+
+    private void ActuallyStartMinigame()
+    {
         currentTapCount = 0;
         remainTime = timeLimit;
         isPlaying = true;
 
         if (panel != null)
             panel.SetActive(true);
+
+        //BGM 재생용 코드
+        PlayMinigameBGM();
+        //여기까지
 
         UpdateUI();
 
@@ -66,6 +107,11 @@ public class PossessionMinigame : MonoBehaviour
         if (!isPlaying) return;
 
         currentTapCount++;
+
+        //효과음용 코드
+        PlayMashSound();
+        //여기까지
+
         UpdateUI();
 
         Debug.Log("[PossessionMinigame] 연타: " + currentTapCount);
@@ -98,6 +144,11 @@ public class PossessionMinigame : MonoBehaviour
         isPlaying = false;
         ClosePanelOnly();
 
+        //BGM, 효과음용 코드
+        StopMinigameBGM();
+        PlayBellSound();
+        //여기까지
+
         Debug.Log("[PossessionMinigame] 빙의 성공");
         onSuccess?.Invoke();
     }
@@ -109,9 +160,45 @@ public class PossessionMinigame : MonoBehaviour
         isPlaying = false;
         ClosePanelOnly();
 
+        //BGM, 효과음용 코드
+        StopMinigameBGM();
+        PlayBellSound();
+        //여기까지
+
         Debug.Log("[PossessionMinigame] 빙의 실패");
         onFail?.Invoke();
     }
+
+    //BGM, 효과음용 코드
+    private void PlayBellSound()
+    {
+        if (sfxSource != null && bellSound != null)
+            sfxSource.PlayOneShot(bellSound);
+    }
+
+    private void PlayMashSound()
+    {
+        if (sfxSource != null && mashSound != null)
+            sfxSource.PlayOneShot(mashSound);
+    }
+
+    private void PlayMinigameBGM()
+    {
+        if (bgmSource != null && minigameBGM != null)
+        {
+            bgmSource.Stop();
+            bgmSource.clip = minigameBGM;
+            bgmSource.loop = true;
+            bgmSource.Play();
+        }
+    }
+
+    private void StopMinigameBGM()
+    {
+        if (bgmSource != null)
+            bgmSource.Stop();
+    }
+    //여기까지
 
     private void ClosePanelOnly()
     {
