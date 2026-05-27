@@ -21,17 +21,17 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
-    m_path: Assets/Scenes/InsideScene.unity
-    m_guid: e1b871c1eb67e4ccc857f9188b3bf57a
+    m_path: Assets/Scenes/TitleScene.unity
+    m_guid: 6405dfe61cff56a458a2d7907b398f03
+  - m_enabled: 1
+    m_path: Assets/Scenes/NarrationScene.unity
+    m_guid: 7bd676e868f692c4e967af1acacb5e2d
   - m_enabled: 1
     m_path: Assets/Scenes/OutsideScene.unity
     m_guid: 92ef7282971e74b99bb9db65637528f8
   - m_enabled: 1
-    m_path: Assets/Scenes/TestJiseon.unity
-    m_guid: f1316a2684b3d834a8721daa92a6c443
-  - m_enabled: 1
-    m_path: Assets/Scenes/YeonjaeScene.unity
-    m_guid: 6405dfe61cff56a458a2d7907b398f03
+    m_path: Assets/Scenes/InsideScene.unity
+    m_guid: e1b871c1eb67e4ccc857f9188b3bf57a
   m_HasScriptingDefines: 0
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:
