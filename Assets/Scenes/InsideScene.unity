@@ -853,7 +853,7 @@ MonoBehaviour:
   gaugeSlider: {fileID: 2075289498}
   timerText: {fileID: 786224457}
   countText: {fileID: 1509859923}
-  requiredTapCount: 10
+  requiredTapCount: 100
   timeLimit: 14
   sfxSource: {fileID: 316929369}
   bgmSource: {fileID: 316929368}
@@ -1870,7 +1870,6 @@ MonoBehaviour:
   sfxSource: {fileID: 536093037}
   paperSound: {fileID: 8300000, guid: e7f2eaaab2768ee45a55e8750d1bea12, type: 3}
   letterPageSound: {fileID: 8300000, guid: 4382c0119e82b5f49affd2a62d430943, type: 3}
-  narrationNextSound: {fileID: 0}
   letterSoundCount: 5
   ghostWarningUI: {fileID: 0}
   promptEWithText: {fileID: 0}
